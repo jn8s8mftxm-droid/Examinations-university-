@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <title>NEON SURVIVORS | ネオンサバイバーズ</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+    
+    <!-- Title Screen -->
+    <div id="title-screen" class="screen">
+      <div class="title-content">
+        <h1 class="game-title">NEON<br>SURVIVORS</h1>
+        <p class="subtitle">ネオンサバイバーズ</p>
+        <p class="tagline">Survive the endless neon waves</p>
+        <button id="start-btn" class="neon-btn">START GAME</button>
+        <div class="controls-info">
+          <p>移動: WASD / 矢印キー / マウスドラッグ</p>
+          <p>自動攻撃 · レベルアップで強化</p>
+        </div>
+        <div class="high-score-display">
+          BEST: <span id="best-score">0</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Upgrade Screen -->
+    <div id="upgrade-screen" class="screen hidden">
+      <h2>LEVEL UP!</h2>
+      <p class="level-text">Choose an upgrade</p>
+      <div id="upgrade-options" class="upgrade-grid"></div>
+    </div>
+
+    <!-- Game Over Screen -->
+    <div id="gameover-screen" class="screen hidden">
+      <h2>GAME OVER</h2>
+      <div class="stats">
+        <p>TIME: <span id="final-time">0</span>s</p>
+        <p>KILLS: <span id="final-kills">0</span></p>
+        <p>SCORE: <span id="final-score">0</span></p>
+        <p class="new-best hidden" id="new-best">NEW BEST!</p>
+      </div>
+      <button id="restart-btn" class="neon-btn">PLAY AGAIN</button>
+      <button id="menu-btn" class="neon-btn secondary">MAIN MENU</button>
+    </div>
+
+    <!-- HUD -->
+    <div id="hud" class="hidden">
+      <div class="hud-top">
+        <div class="hp-bar-container">
+          <div class="hp-bar" id="hp-bar"></div>
+          <span class="hp-text" id="hp-text">100</span>
+        </div>
+        <div class="level-display">
+          Lv.<span id="level">1</span>
+        </div>
+        <div class="score-display">
+          <span id="score">0</span>
+        </div>
+      </div>
+      <div class="xp-bar-container">
+        <div class="xp-bar" id="xp-bar"></div>
+      </div>
+      <div class="time-display">
+        <span id="time">0:00</span>
+      </div>
+    </div>
+
+    <!-- Pause overlay -->
+    <div id="pause-overlay" class="screen hidden">
+      <h2>PAUSED</h2>
+      <p>Press ESC or P to resume</p>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
